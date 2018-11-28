@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 public class Boletin12_1 {
 
     public static void main(String[] args) {
-        Coche unCoche ;
+        Coche unCoche;
         Garaxe unGaraje = new Garaxe();
         /*Garaxe tresCoche = new Garaxe("ABDS234");
         Garaxe cuatroCoche = new Garaxe("ABDS234");
@@ -32,7 +32,7 @@ public class Boletin12_1 {
             switch (opcion) {
                 case 0:
                     if (unGaraje.getNumeroCoches() < unGaraje.getCapacidad()) {
-                        unCoche= new Coche();
+                        unCoche = new Coche();
                         unCoche.pedirMatricula();
                         unGaraje.aparcar(unCoche);
                         break;

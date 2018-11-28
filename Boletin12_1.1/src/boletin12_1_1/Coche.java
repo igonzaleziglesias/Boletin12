@@ -1,10 +1,10 @@
-
 package boletin12_1_1;
 
 import javax.swing.JOptionPane;
 
 public class Coche {
-    String matricula ;
+
+    String matricula;
     String marca;
 
     public Coche(String matricula) {
@@ -21,9 +21,9 @@ public class Coche {
     public void setMatricula(String Matricula) {
         this.matricula = Matricula;
     }
-    
-    public void pedirMatricula(){
-        this.matricula=JOptionPane.showInputDialog("INTRODUCIR MATRICULA: ");
+
+    public void pedirMatricula() {
+        this.matricula = JOptionPane.showInputDialog("INTRODUCIR MATRICULA: ");
     }
-   
+
 }
