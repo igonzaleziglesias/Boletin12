@@ -53,10 +53,11 @@ public class Garaxe {
 
     public String toString(int i) {
         DecimalFormat formato = new DecimalFormat("0.00");
+        DecimalFormat formato1 = new DecimalFormat("00");
         //System.out.println("POSICIONDEL ARRAY: " + i);
         return "FACTURA\n" //muestra la factura 
                 + "\nMATRICULA COCHE " + parking[i].getMatricula()
-                + "\nTEMPO " + formato.format(parking[i].getTiempo()) + "s"
+                + "\nTEMPO " + formato1.format(parking[i].getTiempo()) + "s"
                 + "\nPRECIO " + formato.format(precio(i))
                 + "\nCARTOS RECIBIDOS " + formato.format(cartosRecividos) + " EUROS"
                 + "\nCARTOS DEVOLTOS " + formato.format(cartosDevoltos) + " EUROS"
