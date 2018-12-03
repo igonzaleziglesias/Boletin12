@@ -2,7 +2,6 @@ package boletin12_1_1;
 
 import PedirDatos.pedir;
 import java.text.DecimalFormat;
-import java.util.Date;
 import javax.swing.JOptionPane;
 
 public class Garaxe {
