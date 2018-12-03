@@ -37,13 +37,13 @@ public class Boletin12_1 {
                         unGaraje.aparcar(unCoche);
                         break;
                     } else {
-                        System.out.println("NUMERO DE COCHES EN EL APARCAMIENTO: " + unGaraje.getNumeroCoches());
+                        //System.out.println("NUMERO DE COCHES EN EL APARCAMIENTO: " + unGaraje.getNumeroCoches());
                         JOptionPane.showMessageDialog(null, "COMPLETO");
                         break;
                     }
 
                 case 1:
-                    unGaraje.retirarCoche();
+                    unGaraje.retirar();
                     break;
                 case 2:
                     condicion = true;
