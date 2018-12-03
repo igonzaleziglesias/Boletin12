@@ -11,12 +11,9 @@ public class Garaxe {
     private Coche unCoche;
     private int capacidad = 0;
     private Coche[] parking;
-
     private Date fechaFin;
     private long transcurrido;
     private long horas;
-    private long minutos;
-    private long segundos;
     private float cartosRecividos;
     private float cartosDevoltos;
 
