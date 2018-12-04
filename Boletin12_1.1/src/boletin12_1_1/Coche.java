@@ -9,25 +9,22 @@ public class Coche {
     private String marca;
     private Date fechaIni;
     private Date fechaFin;
-    
+
     public Coche() {
     }
-    
+
     public Coche(String matricula) {
         this.matricula = matricula;
     }
-    
-    
 
     public void iniciarHoraIni() {
         fechaIni = new Date();
     }
-    
+
     public void iniciarHoraFin() {
         fechaFin = new Date();
     }
 
-    
     public Date getFechaIni() {
         return fechaIni;
     }
@@ -36,8 +33,8 @@ public class Coche {
         return fechaFin;
     }
 
-    public long getTiempo(){
-        return (fechaFin.getTime()-fechaIni.getTime())/1000 % 60;
+    public long getTiempo() {
+        return (fechaFin.getTime() - fechaIni.getTime()) / 1000 % 60;
     }
 
     public String getMatricula() {

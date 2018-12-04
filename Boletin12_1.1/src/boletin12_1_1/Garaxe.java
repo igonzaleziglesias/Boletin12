@@ -68,14 +68,14 @@ public class Garaxe {
     public int localizarCoche(String matricula) {
         int localizado = 0;
         for (int i = 0; i <= numCoches - 1; i++) {
-           
+
             if (this.parking[i].getMatricula().equalsIgnoreCase(matricula)) {
                 localizado = i;
-            }else {
-                JOptionPane.showMessageDialog(null,"NO HAY NINGUN COCHE CON ESA MATRICULA");
-                localizado=-1;
+            } else {
+                JOptionPane.showMessageDialog(null, "NO HAY NINGUN COCHE CON ESA MATRICULA");
+                localizado = -1;
             }
-            
+
         }
         //System.out.println("\nPOSICION DEL ARRAY: " + localizado);
         return localizado;
@@ -89,28 +89,28 @@ public class Garaxe {
         } else {
             String matricula = JOptionPane.showInputDialog("INDIQUE A MATRICULA: ");
             int indicador = localizarCoche(matricula);
-            
-            if (indicador!=-1){ 
-            parking[indicador].iniciarHoraFin();//hora de salida del vehiculo
-            //System.out.println("\nSEGUNDOS: " + parking[indicador].getTiempo());//calcula el tiempo transcurrido y me lo muestra
-            //System.out.println("PRECIO: " + precio(indicador));
 
-            do {
-                cartosRecividos = pedir.pedirFloat("PRECIO = " + formato.format(precio(indicador)) + " EUROS" + "\nINGRESE OS CARTOS: ");
-                cartosDevoltos = cartosRecividos - precio(indicador);
-                if (cartosDevoltos < 0) {//comprobacion saldo suficiente
-                    JOptionPane.showMessageDialog(null, "SALDO INSUFICIENTE, INGRESE MAS DINERO");
+            if (indicador != -1) {
+                parking[indicador].iniciarHoraFin();//hora de salida del vehiculo
+                //System.out.println("\nSEGUNDOS: " + parking[indicador].getTiempo());//calcula el tiempo transcurrido y me lo muestra
+                //System.out.println("PRECIO: " + precio(indicador));
+
+                do {
+                    cartosRecividos = pedir.pedirFloat("PRECIO = " + formato.format(precio(indicador)) + " EUROS" + "\nINGRESE OS CARTOS: ");
+                    cartosDevoltos = cartosRecividos - precio(indicador);
+                    if (cartosDevoltos < 0) {//comprobacion saldo suficiente
+                        JOptionPane.showMessageDialog(null, "SALDO INSUFICIENTE, INGRESE MAS DINERO");
+                    }
+                } while (cartosDevoltos < 0);
+
+                JOptionPane.showMessageDialog(null, toString(indicador));//muestra factura
+
+                for (int i = indicador; i < parking.length - 1; i++) {
+                    parking[i] = parking[i + 1];
                 }
-            } while (cartosDevoltos < 0);
-
-            JOptionPane.showMessageDialog(null, toString(indicador));//muestra factura
-
-            for (int i = indicador; i < parking.length - 1; i++) {
-                parking[i] = parking[i + 1];
-            }
-            this.numCoches--;
-            visualizarArray();
-            //System.out.println("\nNUMERO DE COCHES EN EL APARCAMIENTO: " + numCoches);//muestra numero de coches en el aparcamiento
+                this.numCoches--;
+                visualizarArray();
+                //System.out.println("\nNUMERO DE COCHES EN EL APARCAMIENTO: " + numCoches);//muestra numero de coches en el aparcamiento
 
             }
         }
