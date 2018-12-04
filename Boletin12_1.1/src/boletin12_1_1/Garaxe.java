@@ -57,7 +57,7 @@ public class Garaxe {
         //System.out.println("POSICIONDEL ARRAY: " + i);
         return "FACTURA\n" //muestra la factura 
                 + "\nMATRICULA COCHE " + parking[i].getMatricula()
-                + "\nTEMPO " + formato1.format(parking[i].getTiempo()) + "s"
+                + "\nTEMPO " + formato1.format(parking[i].getTiempo()) + " s"
                 + "\nPRECIO " + formato.format(precio(i))
                 + "\nCARTOS RECIBIDOS " + formato.format(cartosRecividos) + " EUROS"
                 + "\nCARTOS DEVOLTOS " + formato.format(cartosDevoltos) + " EUROS"
@@ -68,9 +68,14 @@ public class Garaxe {
     public int localizarCoche(String matricula) {
         int localizado = 0;
         for (int i = 0; i <= numCoches - 1; i++) {
+           
             if (this.parking[i].getMatricula().equalsIgnoreCase(matricula)) {
                 localizado = i;
+            }else {
+                JOptionPane.showMessageDialog(null,"NO HAY NINGUN COCHE CON ESA MATRICULA");
+                localizado=-1;
             }
+            
         }
         //System.out.println("\nPOSICION DEL ARRAY: " + localizado);
         return localizado;
@@ -84,7 +89,8 @@ public class Garaxe {
         } else {
             String matricula = JOptionPane.showInputDialog("INDIQUE A MATRICULA: ");
             int indicador = localizarCoche(matricula);
-
+            
+            if (indicador!=-1){ 
             parking[indicador].iniciarHoraFin();//hora de salida del vehiculo
             //System.out.println("\nSEGUNDOS: " + parking[indicador].getTiempo());//calcula el tiempo transcurrido y me lo muestra
             //System.out.println("PRECIO: " + precio(indicador));
@@ -106,6 +112,7 @@ public class Garaxe {
             visualizarArray();
             //System.out.println("\nNUMERO DE COCHES EN EL APARCAMIENTO: " + numCoches);//muestra numero de coches en el aparcamiento
 
+            }
         }
 
     }
